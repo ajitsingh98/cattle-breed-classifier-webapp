@@ -1,0 +1,30 @@
+title: Indigenous Cattle Breed Classifier
+description: Identify your cattle Breed
+about:
+
+
+  This is a Cattle Breed Classifier using Deep Learning built on top of Pytorch.
+
+
+  The project was build by [Ajit Kumar Singh](https://sajit9285.github.io/myportfolio)
+
+
+  More info and the source code can he found below.
+
+
+  - [Blog](https://sajit9285.github.io/myportfolio)    
+
+  - [Web app](https://cattle-breed-classifier.herokuapp.com)
+
+
+code: https://github.com/sajit9285/cattle-breed-classifier-webapp
+
+sampleImages:
+  - name: Gir Cow
+    url:  https://cpimg.tistatic.com/05562730/b/4/Brown-Gir-Cow.jpg
+  - name: Mehsana Buffallo
+    url: https://img3.exportersindia.com/product_images/bc-full/dir_170/5099898/black-mehsana-buffalo-1501733678-3189068.jpeg
+  - name: Dangi Cow
+    url: https://1.bp.blogspot.com/-n2TgPiF8bng/WDfY8Sv2G0I/AAAAAAAAC8U/DQ6B4noSTEEK-eO8lChFEfuUO5lvIJyAgCLcB/s600/Dangi%2BCattle.jpg
+  - name: Sahiwal Cow
+    url: https://img1.exportersindia.com/product_images/bc-full/dir_192/5735123/sahiwal-cow-1529766224-4013945.jpeg
