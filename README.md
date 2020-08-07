@@ -10,11 +10,11 @@ The following were used for model **training** (see [requirements.txt](requireme
 
 The following were used for model **deployment**:    
 - Heroku
-- Flask:  version 1.0
+- Flask:  version 1.0.2
  
 
 ## Table of Contents
-1.  [Training the Model](docs/1_training.md) using fastai:  [Indigenous_Cattle_Breed_Classifier](https://github.com/sajit9285/cattle-breed-classifier/blob/master/notebooks/Indigenous_Cattle_Breed_Classifier.ipynb)
+1.  [Training the Model](docs/1_training.md) using fastai:  [Indigenous_Cattle_Breed_Classifier](https://github.com/sajit9285/cattle-breed-classifier-webapp/blob/master/notebooks/Indigenous_Cattle_Breed_Classifier.ipynb)
 2.  [Deploying the App on Heroku](docs/2_heroku_app.md):  my web app is [**cattle-breed-classifier.herokuapp.com**](https://cattle-breed-classifier.herokuapp.com)
 
 ## Demo
