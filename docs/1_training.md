@@ -33,7 +33,7 @@ wget https://drive.google.com/uc?export=download&id=1VSTdl6-AN701ER5mmu2MbO_V26a
 I used the Resnet-50 CNN architecture.  The model took about 7 hours to run on Google Colab. 
 
 ### Training the Deep Learning Model
-The code used for training the data is available in the repository [sajit9285/cattle-breed-classifier](https://github.com/sajit9285/cattle-breed-classifier) in the notebook section.
+The code used for training the data is available in the repository [sajit9285/cattle-breed-classifier](https://github.com/sajit9285/cattle-breed-classifier-webapp) in the notebook section.
 
 ### Output from the Deep Learning Model
 The output of the deep learning model is a file with weights.  The file is called `export.pkl` (or `model.pkl`).  If you train the model as in this repo, the model is saved to the `models` folder.  
