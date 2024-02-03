@@ -7,6 +7,6 @@ Our versions of these two files can be downloaded here from .
 
 **Drive**:      
 
-`wget "https://www.dropbox.com/s/c3069jaxr22ut1z/classes.txt"`
+`wget "https://drive.google.com/u/0/uc?id=1yPDtQXfaCvGU5YJPyMX6qQm9rq_LWuKU&export=download"`
   
-`wget "https://www.dropbox.com/s/eg00gqiliifzr34/model.pkl"`
+`wget "https://drive.google.com/u/0/uc?id=1nSN9SpDJEAHe4pCmKWy0X7oCPyx4BrjT&export=download"`
