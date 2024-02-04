@@ -17,6 +17,7 @@ import asyncio
 import uvicorn
 import nest_asyncio
 import warnings
+import gdown
 from torchvision import transforms
 warnings.filterwarnings("ignore")
 print("Imports Done")
@@ -30,11 +31,7 @@ export_classes_name = "classes.txt"
 
 async def download_file(url, dest):
     if dest.exists(): return
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as response:
-            data = await response.read()
-            with open(dest, 'wb') as f:
-                f.write(data)
+    gdown.download(url, str(dest), quiet=False)
                 
 async def setup_learner():
     await download_file(export_file_url, path / export_file_name)
@@ -42,7 +39,7 @@ async def setup_learner():
     try:
         learn = torch.load(path / export_file_name, map_location=torch.device('cpu'))
         with open(path / export_classes_name, 'r') as file:
-            class_list = file.read().split(",")
+             class_list = file.read().split(",")
         return learn, class_list
     except RuntimeError as e:
         if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
@@ -55,8 +52,6 @@ async def setup_learner():
 loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
 model, class_list = loop.run_until_complete(asyncio.gather(*tasks))[0]
-
-print(class_list)
 
 with open("config.yaml", 'r') as stream:
     APP_CONFIG = yaml.full_load(stream)
@@ -83,9 +78,9 @@ def load_image_bytes(raw_bytes: ByteString) -> Image:
 def predict(img, n: int = 3) -> Dict[str, Union[str, List]]:
 
     transform = transforms.Compose([
-    transforms.Resize((224, 224)), 
-    transforms.ToTensor(), 
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        transforms.Resize((224, 224)), 
+        transforms.ToTensor(), 
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
     outputs = model(transform(img).unsqueeze(0)).squeeze()
     pred_probs = torch.nn.Softmax(dim=-1)(outputs)
