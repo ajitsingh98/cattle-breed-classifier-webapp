@@ -40,7 +40,7 @@ async def setup_learner():
     await download_file(export_file_url, path / export_file_name)
     await download_file(export_classes_url, path / export_classes_name)
     try:
-        learn = torch.load(export_file_name, map_location=torch.device('cpu'))
+        learn = torch.load(path / export_file_name, map_location=torch.device('cpu'))
         with open(path / export_classes_name, 'r') as file:
             class_list = file.read().split(",")
         return learn, class_list
