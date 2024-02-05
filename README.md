@@ -13,8 +13,8 @@ The following were used for model **deployment**:
  
 
 ## Table of Contents
-1.  [Training the Model](docs/1_training.md) using fastai:  [Indigenous_Cattle_Breed_Classifier](https://github.com/sajit9285/cattle-breed-classifier-webapp/blob/master/notebooks/Indigenous_Cattle_Breed_Classifier.ipynb)
-2.  [Deploying the App on Heroku](docs/2_render_app.md):  my web app is [**cattle-breed-classifier.herokuapp.com**](https://cattle-breed-classifier.herokuapp.com)
+1.  [Training the Model](docs/1_training.md) using pytorch:  [Indigenous_Cattle_Breed_Classifier](https://github.com/sajit9285/cattle-breed-classifier-webapp/blob/master/notebooks/Indigenous_Cattle_Breed_Classifier.ipynb)
+2.  [Deploying the App on Render](docs/2_render_app.md):  my web app is [**https://indigenous-cattle-breed-classifier-web.onrender.com**](https://indigenous-cattle-breed-classifier-web.onrender.com)
 
 ## Demo
 
