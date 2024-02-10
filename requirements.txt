@@ -1,7 +1,7 @@
 Flask>=1.0.2
 torch>=1.11.0
 torchvision>=0.12.0
-numpy==1.22.0
+numpy==1.24.1
 Pillow>=9.0.0
 gunicorn>=20.1.0
 wget>=3.2
