@@ -1,0 +1,22 @@
+# CNN from Scratch Configuration
+# Inherits from base.yaml
+
+model:
+  name: "cnn"
+  architecture:
+    conv_channels: [32, 64, 128, 256, 512]
+    kernel_size: 3
+    padding: 1
+    pool_size: 2
+    dropout: 0.4
+    batch_norm: true
+    use_global_avg_pool: true
+
+training:
+  batch_size: 32
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adam"
+  scheduler: "cosine"
+  early_stopping_patience: 10

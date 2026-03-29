@@ -1,0 +1,45 @@
+# Base configuration shared across all models
+# Model-specific configs inherit from this
+
+data:
+  raw_dir: "Cattle_Resized"
+  metadata_path: "data/breed_metadata.csv"
+  manifests_dir: "ml/artifacts/manifests"
+  split_ratios:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+  seed: 42
+  num_workers: 4
+
+image:
+  size: 224
+  channels: 3
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+
+augmentation:
+  random_crop: true
+  horizontal_flip: true
+  rotation_degrees: 15.0
+  color_jitter: true
+  color_jitter_strength: 0.2
+
+training:
+  batch_size: 32
+  num_epochs: 30
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adam"
+  scheduler: "cosine"
+  early_stopping_patience: 7
+  gradient_clip_max_norm: 1.0
+
+evaluation:
+  top_k: 3
+
+artifacts:
+  checkpoints_dir: "ml/artifacts/checkpoints"
+  figures_dir: "ml/artifacts/figures"
+  logs_dir: "ml/artifacts/logs"
+  reports_dir: "ml/artifacts/reports"

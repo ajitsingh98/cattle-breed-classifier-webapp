@@ -1,0 +1,26 @@
+# Vision Transformer (ViT) Transfer Learning Configuration
+# Inherits from base.yaml
+
+model:
+  name: "vit"
+  architecture:
+    backbone: "vit_base_patch16_224"
+    pretrained: true
+    freeze_backbone: true
+    unfreeze_after_epochs: 8
+    unfreeze_layers: ["blocks.10", "blocks.11", "head", "norm"]
+
+training:
+  batch_size: 16               # Smaller batch due to memory
+  num_epochs: 25
+  learning_rate: 0.0005
+  fine_tune_lr: 0.00005
+  weight_decay: 0.01
+  optimizer: "adamw"
+  scheduler: "cosine"
+  warmup_epochs: 3
+  early_stopping_patience: 7
+  label_smoothing: 0.1
+
+image:
+  size: 224                     # ViT-B/16 uses 224x224

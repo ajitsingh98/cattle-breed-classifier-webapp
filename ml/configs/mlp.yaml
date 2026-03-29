@@ -1,0 +1,21 @@
+# MLP Baseline Configuration
+# Inherits from base.yaml
+
+model:
+  name: "mlp"
+  architecture:
+    hidden_layers: [1024, 512, 256]
+    dropout: 0.3
+    batch_norm: true
+    activation: "relu"
+
+training:
+  batch_size: 64
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0005
+  optimizer: "adam"
+  scheduler: "step"
+  scheduler_step_size: 15
+  scheduler_gamma: 0.1
+  early_stopping_patience: 10

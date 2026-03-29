@@ -1,0 +1,22 @@
+# ResNet Transfer Learning Configuration
+# Inherits from base.yaml
+
+model:
+  name: "resnet"
+  architecture:
+    backbone: "resnet50"
+    pretrained: true
+    freeze_backbone: true       # Phase 1: train only classifier head
+    unfreeze_after_epochs: 10   # Phase 2: unfreeze from layer3 onward
+    unfreeze_layers: ["layer3", "layer4", "fc"]
+
+training:
+  batch_size: 32
+  num_epochs: 30
+  learning_rate: 0.001
+  fine_tune_lr: 0.0001          # Lower LR for fine-tuning phase
+  weight_decay: 0.0001
+  optimizer: "adamw"
+  scheduler: "cosine"
+  early_stopping_patience: 7
+  label_smoothing: 0.1

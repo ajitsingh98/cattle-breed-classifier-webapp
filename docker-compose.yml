@@ -1,0 +1,39 @@
+# Docker Compose for Cattle Breed Classifier
+# Run: docker-compose up --build
+
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: cattle-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/models/cattle_breed_classifier_full_model.pth
+      - METADATA_PATH=/app/data/breed_metadata.csv
+      - CLASSES_PATH=/app/models/classes.txt
+      - MODEL_NAME=resnet
+      - MODEL_VERSION=v1.0
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cattle-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
