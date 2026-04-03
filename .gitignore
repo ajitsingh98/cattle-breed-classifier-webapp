@@ -1,8 +1,29 @@
-data/*
-!data/.gitkeep 
-**/.ipynb_checkpoints/
-models/
-!models/classes.txt
-!models/final.pth
-!models/model.pkl
-.idea
+# Model checkpoints & artifacts
+ml/artifacts/checkpoints/*.pth
+ml/artifacts/checkpoints/*.pt
+ml/artifacts/checkpoints/*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
