@@ -20,9 +20,11 @@ COPY models/ ./models/
 
 # Set environment variables
 ENV PYTHONPATH=/app
-ENV MODEL_PATH=/app/models/cattle_breed_classifier_full_model.pth
+ENV MODEL_PATH=/app/models/vit_best.pth
 ENV METADATA_PATH=/app/data/breed_metadata.csv
 ENV CLASSES_PATH=/app/models/classes.txt
+ENV MODEL_NAME=vit
+ENV MODEL_VERSION=v2.0
 
 EXPOSE 8000
 

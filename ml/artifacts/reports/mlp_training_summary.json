@@ -1,0 +1,8 @@
+{
+  "model_name": "mlp",
+  "total_epochs": 50,
+  "best_val_loss": 2.6126601029691736,
+  "best_val_accuracy": 0.24672489082969432,
+  "final_train_loss": 2.78395464926055,
+  "final_val_loss": 2.6139917998334727
+}

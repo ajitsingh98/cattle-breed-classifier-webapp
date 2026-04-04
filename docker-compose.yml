@@ -12,11 +12,11 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - MODEL_PATH=/app/models/cattle_breed_classifier_full_model.pth
+      - MODEL_PATH=/app/models/vit_best.pth
       - METADATA_PATH=/app/data/breed_metadata.csv
       - CLASSES_PATH=/app/models/classes.txt
-      - MODEL_NAME=resnet
-      - MODEL_VERSION=v1.0
+      - MODEL_NAME=vit
+      - MODEL_VERSION=v2.0
     volumes:
       - ./models:/app/models
       - ./data:/app/data

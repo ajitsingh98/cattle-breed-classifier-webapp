@@ -1,0 +1,81 @@
+{
+  "weights_used": {
+    "macro_f1": 0.5,
+    "accuracy": 0.2,
+    "latency": 0.15,
+    "model_size": 0.1,
+    "calibration": 0.05
+  },
+  "rankings": [
+    {
+      "model_name": "resnet",
+      "composite_score": 0.9241,
+      "raw_metrics": {
+        "macro_f1": 0.5606227821703,
+        "accuracy": 0.6318082788671024,
+        "latency_ms": 5.68,
+        "model_size_mb": 93.73
+      },
+      "normalized_metrics": {
+        "macro_f1": 1.0,
+        "accuracy": 1.0,
+        "latency": 0.7485,
+        "model_size": 0.8685
+      },
+      "rank": 1
+    },
+    {
+      "model_name": "vit",
+      "composite_score": 0.7542,
+      "raw_metrics": {
+        "macro_f1": 0.5465106856964207,
+        "accuracy": 0.6318082788671024,
+        "latency_ms": 15.5,
+        "model_size_mb": 328.85
+      },
+      "normalized_metrics": {
+        "macro_f1": 0.967,
+        "accuracy": 1.0,
+        "latency": 0.0,
+        "model_size": 0.4575
+      },
+      "rank": 2
+    },
+    {
+      "model_name": "cnn",
+      "composite_score": 0.2898,
+      "raw_metrics": {
+        "macro_f1": 0.14429494847203667,
+        "accuracy": 0.2440087145969499,
+        "latency_ms": 2.38,
+        "model_size_mb": 18.52
+      },
+      "normalized_metrics": {
+        "macro_f1": 0.0252,
+        "accuracy": 0.0111,
+        "latency": 1.0,
+        "model_size": 1.0
+      },
+      "rank": 3
+    },
+    {
+      "model_name": "mlp",
+      "composite_score": 0.1731,
+      "raw_metrics": {
+        "macro_f1": 0.1335123629487021,
+        "accuracy": 0.23965141612200436,
+        "latency_ms": 2.55,
+        "model_size_mb": 590.55
+      },
+      "normalized_metrics": {
+        "macro_f1": 0.0,
+        "accuracy": 0.0,
+        "latency": 0.987,
+        "model_size": 0.0
+      },
+      "rank": 4
+    }
+  ],
+  "best_model": "resnet",
+  "recommendation": "Recommended model: resnet (composite score: 0.9241)"
+}

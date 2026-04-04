@@ -1,0 +1,8 @@
+{
+  "model_name": "cnn",
+  "total_epochs": 50,
+  "best_val_loss": 2.4368422833072048,
+  "best_val_accuracy": 0.2576419213973799,
+  "final_train_loss": 2.6558288119056006,
+  "final_val_loss": 2.4404091730909054
+}

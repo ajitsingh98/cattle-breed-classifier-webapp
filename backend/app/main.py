@@ -71,13 +71,36 @@ def create_app() -> FastAPI:
     app.include_router(predict.router)
     app.include_router(metadata.router)
 
-    @app.get("/", tags=["Root"])
-    async def root():
-        return {
-            "message": "Cattle Breed Classifier API",
-            "version": settings.app_version,
-            "docs": "/docs",
-        }
+    # Serve Static frontend if it exists
+    static_dir = PROJECT_ROOT / "frontend" / "dist"
+    if static_dir.exists() and static_dir.is_dir():
+        from fastapi.staticfiles import StaticFiles
+        from fastapi.responses import FileResponse
+        
+        # Mount assets
+        assets_dir = static_dir / "assets"
+        if assets_dir.exists():
+            app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
+
+        @app.get("/", tags=["Root"])
+        async def root():
+            return FileResponse(str(static_dir / "index.html"))
+            
+        # Catch-all for react router
+        @app.get("/{full_path:path}", tags=["Root"])
+        async def serve_spa(full_path: str):
+            # Exclude api requests
+            if full_path.startswith("api/") or full_path.startswith("docs") or full_path.startswith("redoc"):
+                return {"detail": "Not Found"}
+            return FileResponse(str(static_dir / "index.html"))
+    else:
+        @app.get("/", tags=["Root"])
+        async def root():
+            return {
+                "message": "Cattle Breed Classifier API",
+                "version": settings.app_version,
+                "docs": "/docs",
+            }
 
     return app
 

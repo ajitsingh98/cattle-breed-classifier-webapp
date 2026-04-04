@@ -1,0 +1,8 @@
+{
+  "model_name": "vit",
+  "total_epochs": 16,
+  "best_val_loss": 1.6746233321693786,
+  "best_val_accuracy": 0.6790393013100436,
+  "final_train_loss": 0.8391286555985759,
+  "final_val_loss": 1.7240543839192286
+}

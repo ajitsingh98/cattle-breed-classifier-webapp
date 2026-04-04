@@ -1,0 +1,18 @@
+INFO:     Started server process [29335]
+INFO:     Waiting for application startup.
+2026-04-03 17:19:15 | INFO     | cattle_classifier | Starting Cattle Breed Classifier API...
+2026-04-03 17:19:15 | INFO     | cattle_classifier | Loading model...
+2026-04-03 17:19:21 | INFO     | cattle_classifier | Model loaded in 6.01s on mps (26 classes)
+2026-04-03 17:19:21 | INFO     | cattle_classifier | Loaded metadata for 26 breeds
+2026-04-03 17:19:21 | INFO     | cattle_classifier | All services loaded successfully
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:7860 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51805 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51807 - "GET /assets/index-DLVfwLls.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51805 - "GET /assets/index-BDG2r_fe.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51805 - "GET /favicon.svg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51838 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51838 - "GET /assets/index-DwmNwtpN.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51840 - "GET /assets/index-DLVfwLls.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51838 - "GET /favicon.svg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51844 - "POST /predict/file?top_k=3 HTTP/1.1" 200 OK

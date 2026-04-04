@@ -11,3 +11,4 @@ numpy>=1.24.0
 PyYAML>=6.0.1
 gunicorn>=21.2.0
 python-dotenv>=1.0.0
+timm>=0.9.0

@@ -27,3 +27,8 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+backend.log
+tunnel.log
+
+models/*.pth

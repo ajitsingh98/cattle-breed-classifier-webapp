@@ -1,0 +1,8 @@
+{
+  "model_name": "resnet",
+  "total_epochs": 24,
+  "best_val_loss": 1.8309240924218857,
+  "best_val_accuracy": 0.6462882096069869,
+  "final_train_loss": 0.8379750170490958,
+  "final_val_loss": 1.8379310614156932
+}
